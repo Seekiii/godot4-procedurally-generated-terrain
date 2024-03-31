@@ -22,16 +22,11 @@ chunk_create_speed | float | 0.05 | desc.
 chunk_show_speed | float | 1.0 | desc.
 map_under_player | bool | false | desc.
 transparent_chunk | bool | false | desc
+
+Signals | Description
+--- | ---
+map_ready | desc.
+chunk_change | desc.
 <hr>
 
-### Photos:
 ![image](https://github.com/Seekiii/godot4-procedurally-generated-terrain/assets/64194468/ccf9547b-2d42-4a7b-96d3-b6b14290df3c)
-
-![image](https://github.com/Seekiii/godot4-procedurally-generated-terrain/assets/64194468/06f77758-1648-4f25-ad00-d5a4212fe266)
-![image](https://github.com/Seekiii/godot4-procedurally-generated-terrain/assets/64194468/56e0aa5f-8632-4396-bd45-c06c28e78aea)
-![image](https://github.com/Seekiii/godot4-procedurally-generated-terrain/assets/64194468/1b5231b0-a009-43ec-bf78-e17eb82cfdc7)
-
-
-
-
-
