@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://detacysixr15p"]
+
+[ext_resource type="Environment" uid="uid://gejkg4ou3v7t" path="res://env.tres" id="1_rmrta"]
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="2_kxns7"]
+[ext_resource type="PackedScene" uid="uid://ry3c5djemip2" path="res://terrain.tscn" id="2_vayhu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ipq3q"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_g0irq"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 50.0
+dof_blur_far_transition = 20.0
+dof_blur_amount = 0.02
+
+[node name="main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_rmrta")
+
+[node name="terrain" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_vayhu")]
+player = NodePath("../CharacterBody3D")
+noise_terrain = "res://noise_terrain.tres"
+chunk_script = "res://chunk.gd"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+script = ExtResource("2_kxns7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_ipq3q")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70056, 0)
+attributes = SubResource("CameraAttributesPractical_g0irq")
+
+[connection signal="map_ready" from="terrain" to="CharacterBody3D" method="_on_terrain_map_ready"]

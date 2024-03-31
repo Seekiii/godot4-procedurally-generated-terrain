@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ne76ikokmjov"]
+
+[ext_resource type="Texture2D" uid="uid://kinp3jusv4se" path="res://texture/desert.png" id="1_hyto6"]
+
+[resource]
+albedo_texture = ExtResource("1_hyto6")
+metallic_specular = 0.0
+roughness = 0.0
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 13.9288
+uv1_world_triplanar = true
