@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ry3c5djemip2"]
+
+[ext_resource type="Script" path="res://terrain.gd" id="1_pl7xx"]
+
+[node name="terrain" type="Node3D"]
+script = ExtResource("1_pl7xx")
+
+[connection signal="chunk_change" from="." to="." method="_on_chunk_change"]
+[connection signal="map_ready" from="." to="." method="_on_map_ready"]
