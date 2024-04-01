@@ -9,24 +9,24 @@ THIS TERRAIN IS NOT OPTIMIZED. I made the terrain according to my own logic (pro
 
 Properties | Type | Default | Description
 --- | --- | --- | --- 
-chunk_size | int | 16 | desc.
-terrain_height | int | 5 | desc.
-render_distance | int | 19 | desc.
-terrain_seed | int | 5902 | desc.
-lod | float | 1 | desc.
-player | Node | null | desc.
-noise_terrain | (noise) .tres | null | desc.
-chunk_script | (script) .gd | null | desc.
-optimised_collision | bool| true | desc.
-chunk_create_speed | float | 0.05 | desc.
-chunk_show_speed | float | 1.0 | desc.
-map_under_player | bool | false | desc.
-transparent_chunk | bool | false | desc
+chunk_size | int | 16 | X .
+terrain_height | int | 5 | How much is terrain height (mountains)..
+render_distance | int | 19 | How much chunks player can see.
+terrain_seed | int | 5902 | Terrain generation (this is not random, you can set it random in code).
+lod | float | 1 | Level of detail.
+player | Node | null | Node of your player.
+noise_terrain | (noise) .tres | null | Noise how the terrain will be created.
+chunk_script | (script) .gd | null | Script for chunk's.
+optimised_collision | bool| true | If `true` then CollisionShape3D will be created arround player (i think in radius od 100 meters or something like that). If `false` then all chunks that are in render will be CollisionShape3D.
+chunk_create_speed | float | 0.05 | How much script wait to create one chunk.
+chunk_show_speed | float | 1.0 | How much script wait to show chunk.
+map_under_player | bool | false | If `true` - Map will not be set on Vector3(0,0,0), then will be set under player position.
+transparent_chunk | bool | false | This is for debugging, chunk is transparent but you can walk on it.
 
 Signals | Description
 --- | ---
-map_ready | desc.
-chunk_change | desc.
+map_ready | When map is ready, this signal is activated.
+chunk_change | When player go on another chunk, this signal is activated.
 <hr>
 
 ![image](https://github.com/Seekiii/godot4-procedurally-generated-terrain/assets/64194468/ccf9547b-2d42-4a7b-96d3-b6b14290df3c)
